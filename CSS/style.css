@@ -804,14 +804,14 @@ textarea {
         margin-left: 50px;
     }
     #dailydataReturned {
-        grid-column-start: 1;
+        grid-column-start: 3;
         grid-column-end: 7;
         grid-row-start: 4;
         grid-row-end: 9;
-        width: 800px;
+        width: 700px;
         height: 550px;
         margin-top: -10px;
-        margin-left: 50px;
+        margin-left: 90px;
         margin-bottom: -20px;
     }
     #imgInfo {
