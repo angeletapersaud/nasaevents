@@ -223,6 +223,7 @@ body {
 
 #issBtn {
     margin-bottom: 90px;
+    margin-left: 270px;
 }
 
 #eventSearchBtn:hover,
@@ -897,6 +898,9 @@ textarea {
         grid-column-end: 12;
         grid-row-start: 8;
         grid-row-end: 13;
+    }
+    #issBtn {
+        margin-left: 120px;
     }
     #titleList {
         grid-column-start: 1;
