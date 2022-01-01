@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NASA Events</title>
+    <link rel="shortcut Icon" href="/Media/Images/nasalogoicon.ico">
+    <link rel="stylesheet" href="/CSS/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="page3Container">
+
+        <a href="/Pages/index.html"><img class="nasaIcon" src="/Media/Images/nasaIcon.png"></a>
+        <a id="imgofthedaybuttonpg3" href="/Pages/nasaImageOfTheDayPage.html" class="glow-btn">Image of the day</a>
+        <a id="FeedbackBtnPg3" href="/Pages/feedbackForm.html" class="glow-btn">Feedback</a>
+
+
+        <div id='EventContainer'>
+            <button id="eventSearchBtn" class="glow-btn">Search Event</button>
+            <input id='eventSearchTxt' type="text" placeholder="Enter category">
+            <p> Select Event Category:
+                <select id="eventSearchDropdown">
+                    <option value="wildfires">Wildfires</option>
+                    <option value="volcanoes">Volcanoes</option>
+                    <option value="seaLakeIce">Sea Lake Ice</option>
+                </select>
+            </p>
+            <div id='eventsDiv'></div>
+        </div>
+
+        <div id="issContainer">
+            <button id="issBtn" class="glow-btn">Where is the ISS?</button>
+
+            <div id="issLatitude">ISS Latitude</div>
+            <div id="issLongitude">ISS Longitude</div>
+        </div>
+        <h1 id="titlePg3">Events tracked by NASA</h1>
+        <div id="map"></div>
+
+
+        <img id="issPicture" src="/Media/Images/internationalSpaceStationImage1.jpg">
+
+
+    </div>
+
+
+
+
+    </div>
+
+
+</body>
+<script src="/Javascripts/nasaEvents.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnNjnCW3O8_mAE0bNavnVV41b9alOFfRQ&callback=initMap "></script>
+
+
+</html>
