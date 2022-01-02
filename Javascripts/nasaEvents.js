@@ -1,6 +1,7 @@
 const eventSearchBtn = document.querySelector("#eventSearchBtn");
 const issSearch = document.querySelector("#issBtn");
 let eventMarkers = [];
+let issOutput;
 //Add a click event listener to the search event button element that runs the function requestAPI_Event
 eventSearchBtn.addEventListener("click", () => {
     const eventSearchTxt = document.querySelector("#eventSearchTxt");
@@ -25,20 +26,20 @@ window.addEventListener("load", () => {
 })
 
 // Add a click event listener to the 'where is the ISS?' button element that runs the function requestISS
-// window.addEventListener("load", () => {
-//     setInterval(requestISS, 1000);
-// })
+window.addEventListener("load", () => {
+    // setInterval(requestISS, 1000);
+    requestISS();
+})
 
 //asynchronus api call to get ISS latitude and longitude
 async function requestISS() {
-
     let reply = await fetch(`https://api.wheretheiss.at/v1/satellites/25544`);
-    let issOutput = await reply.json()
+    issOutput = await reply.json()
     DisplayissApiData(issOutput);
 }
 
 //render ISS latitude and longitude to the browser
-function DisplayissApiData(issOutput) {
+function DisplayissApiData() {
     document.querySelector("#issLatitude").innerText = (`ISS Latitude: ${ issOutput.latitude }`);
     document.querySelector("#issLongitude").innerText = (`ISS Longitude: ${ issOutput.longitude }`);
 
@@ -130,8 +131,8 @@ async function initMap() {
     //add iss coordinates to markers array
     markers.push({
             coords: {
-                lat: parseFloat(document.querySelector("#issLongitude").innerText),
-                lng: parseFloat(document.querySelector("#issLatitude").innerText)
+                lat: issOutput.latitude,
+                lng: issOutput.longitude
             },
             iconImage: '../Media/Images/satelite.png',
             content: '<h1>International Space Station</h1>'
