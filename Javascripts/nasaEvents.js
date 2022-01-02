@@ -115,7 +115,7 @@ async function initMap() {
                     lat: eventMarkers[i]['geometry'][0]['coordinates'][1]
 
                 },
-                iconImage: eventMarkers[i]['title'].toUpperCase().includes('FIRE') ? '/Media/Images/bonfireIcon2020.png' : eventMarkers[i]['title'].toUpperCase().includes('VOLCANO') ? '/Media/Images/volcanoIcon.png' : eventMarkers[i]['title'].toUpperCase().includes('ICEBERG') ? '/Media/Images/iceIcon.png' : '/Media/Images/dropPin.png',
+                iconImage: eventMarkers[i]['title'].toUpperCase().includes('FIRE') ? '../Media/Images/bonfireIcon2020.png' : eventMarkers[i]['title'].toUpperCase().includes('VOLCANO') ? '../Media/Images/volcanoIcon.png' : eventMarkers[i]['title'].toUpperCase().includes('ICEBERG') ? '../Media/Images/iceIcon.png' : '../Media/Images/dropPin.png',
 
                 content: eventMarkers[i]['title'].toUpperCase().includes('FIRE') ? '<h1>Wildfire</h1>' : eventMarkers[i]['title'].toUpperCase().includes('VOLCANO') ? '<h1>VOLCANO</h1>' : eventMarkers[i]['title'].toUpperCase().includes('ICEBERG') ? '<h1>ICEBERG</h1>' : '<h1>Natural Disaster</h1>'
             }
@@ -133,7 +133,7 @@ async function initMap() {
                 lat: parseFloat(document.querySelector("#issLongitude").innerText),
                 lng: parseFloat(document.querySelector("#issLatitude").innerText)
             },
-            iconImage: '/Media/Images/satelite.png',
+            iconImage: '../Media/Images/satelite.png',
             content: '<h1>International Space Station</h1>'
         }
 
@@ -145,7 +145,7 @@ async function initMap() {
                 lat: 40.7128,
                 lng: -74.0060
             },
-            iconImage: '/Media/Images/statueOfLiberty.png',
+            iconImage: '../Media/Images/statueOfLiberty.png',
             content: '<h1>NYC</h1>'
         }
 
