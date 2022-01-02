@@ -1,4 +1,5 @@
 body {
+    overflow-x: hidden;
     background-color: white;
     place-items: center;
     display: grid;
