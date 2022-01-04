@@ -1,7 +1,9 @@
-const eventSearchBtn = document.querySelector("#eventSearchBtn");
-const issSearch = document.querySelector("#issBtn");
 let eventMarkers = [];
 let issOutput;
+const issSearch = document.querySelector("#issBtn");
+const eventSearchDropdown = document.querySelector("#eventSearchDropdown");
+const eventSearchBtn = document.querySelector("#eventSearchBtn");
+
 //Add a click event listener to the search event button element that runs the function requestAPI_Event
 eventSearchBtn.addEventListener("click", () => {
     const eventSearchTxt = document.querySelector("#eventSearchTxt");
@@ -10,7 +12,6 @@ eventSearchBtn.addEventListener("click", () => {
 
 //Add a click event listener to the select event category dropdown element that runs the function requestAPI_Event
 eventSearchDropdown.addEventListener("change", () => {
-    const eventSearchDropdown = document.querySelector("#eventSearchDropdown");
     requestAPI_Event(eventSearchDropdown.options[eventSearchDropdown.selectedIndex].value);
 })
 
@@ -89,7 +90,7 @@ async function requestAPI_Event(filter = '') {
 //define initMap function to send in the google api request
 async function initMap() {
 
-    // initial the zoom and focus point 
+    // initial the zoom and focus point
     let options = {
         zoom: 1,
         center: {
@@ -153,7 +154,7 @@ async function initMap() {
     );
 
 
-    // Loop through markers anc call the addMarkers function each time to render the pointer to google maps
+    // Loop through markers and call the addMarkers function each time to render the pointer to google maps
     //the addMarker function needs the markers array and map object in order to render the pointers
     for (let i = 0; i < markers.length; i++) {
         addMarker(markers[i], map);
@@ -164,7 +165,8 @@ function addMarker(props, map) {
     let marker = new google.maps.Marker({
         position: props.coords,
         map: map,
-        //icon:props.iconImage
+        animation: google.maps.Animation.DROP
+            //icon:props.iconImage
     });
 
     // Check for customicon

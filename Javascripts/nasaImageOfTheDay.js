@@ -33,7 +33,7 @@ $(document).ready(function() {
         document.querySelector("#titleFound").innerHTML = imgResultInfo.title;
         let videoURL = `${imgResultInfo.url}&autoplay=1&muted=1&loop=1&;enablejsapi=1`;
         document.querySelector("#dailyImgFound").innerHTML = imgResultInfo.url.includes('.jpg') || imgResultInfo.url.includes('.gif') || imgResultInfo.url.includes('.png') ?
-            `<img id = 'dailydataReturned' src="${imgResultInfo.url}">` :
+            `<img id = 'dailydataReturned' src="${imgResultInfo.hdurl}">` :
             `<iframe id = 'dailydataReturned' width="840" height="630" src="${videoURL}" allow="autoplay"></iframe>`;
         document.querySelector("#imgInfo").innerHTML = imgResultInfo.explanation;
     }
